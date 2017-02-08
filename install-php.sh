@@ -1,8 +1,9 @@
 #!/bin/sh
 
-apk add freetds freetype icu libintl libldap libjpeg libmcrypt libpng libpq libwebp
+apk add curl freetds freetype icu libintl libldap libjpeg libmcrypt libpng libpq libwebp
 
-TMP="freetds-dev \
+TMP="curl-dev \
+    freetds-dev \
     freetype-dev \
     gettext-dev \
     icu-dev \
@@ -19,6 +20,7 @@ apk add $TMP
 docker-php-ext-configure gd --with-jpeg-dir=usr/ --with-freetype-dir=usr/ --with-webp-dir=usr/
 docker-php-ext-configure ldap --with-libdir=lib/
 docker-php-ext-configure pdo_dblib --with-libdir=lib/
+docker-php-ext-configure curl --with-libdir=lib/
 
 # Download mongo extension
 /usr/local/bin/pecl download mongodb && \
@@ -27,6 +29,7 @@ docker-php-ext-configure pdo_dblib --with-libdir=lib/
     mv /usr/src/php/ext/mongo* /usr/src/php/ext/mongodb
 
 docker-php-ext-install \
+    curl \
     exif \
     gd \
     gettext \

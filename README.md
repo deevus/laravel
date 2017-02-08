@@ -8,7 +8,7 @@ This image it's for development. **Optimize to use in production!**
 In the latest update, I changed the base image to `php:alpine` for size optimizing.
 
 ## Tags
-* [**`latest`**:](https://github.com/hitalos/laravel/blob/master/Dockerfile)  
+* [**`latest`**:](https://github.com/hitalos/laravel/blob/master/Dockerfile)
  * `php` 7.1.1
    * `composer` 1.3.2
  * `nodejs` 7.5.0
@@ -22,6 +22,7 @@ In the latest update, I changed the base image to `php:alpine` for size optimizi
 * `sqlite`
 
 ## Extra supported extensions
+* `curl`
 * `exif`
 * `gd`
 * `ldap`
