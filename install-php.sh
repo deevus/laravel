@@ -48,6 +48,10 @@ php -r "readfile('https://getcomposer.org/installer');" | php && \
    mv composer.phar /usr/bin/composer && \
    chmod +x /usr/bin/composer
 
+# Update curl certificates
+mkdir -p /etc/ssl/certs && \
+update-ca-certificates
+
 apk del $TMP
 
 # Set timezone
